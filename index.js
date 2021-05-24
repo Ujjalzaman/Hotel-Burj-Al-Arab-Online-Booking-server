@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 require('dotenv').config();
 const bodParser = require('body-parser');
 const cors = require('cors');
-console.log(process.env.DB_USER)
+// console.log(process.env.DB_USER)
 app.use(cors());
 app.use(bodParser.json());
 //firebase admin sdk
@@ -66,4 +66,4 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(8000)
+app.listen(process.env.PORT || 8000)
